@@ -1,0 +1,40 @@
+<md-content>
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+			<h2>Data parsed</h2>
+			<span flex></span>
+			<!-- <md-button class="md-raised md-mini" ng-click="$ctrl.showTrain()">Training</md-button> -->
+			<!-- <md-button class="md-raised md-mini" ng-click="$ctrl.showGetData()">Parsing</md-button> -->
+		</div>
+	</md-toolbar>
+	<md-content>
+		<md-card>
+			<md-card-content>
+				<div layout="row" layout-wrap class="filter-wrap">
+					<md-input-container flex="20">
+						<label>Select Game</label>
+						<md-select ng-model="$ctrl.group">
+							<md-option ng-repeat="item in $ctrl.groups track by item.name" ng-value="item" ng-click="$ctrl.goTeam(item)">
+								{{item.name}}
+							</md-option>
+						</md-select>
+					</md-input-container>
+					<md-input-container flex="20">
+						<label>Select Year</label>
+						<md-select placeholder="Select Year" ng-model="$ctrl.year" flex="100">
+							<md-option ng-value="year" ng-repeat="year in $ctrl.years track by year" ng-click="$ctrl.goYear(year)">{{year}}</md-option>
+						</md-select>
+					</md-input-container>
+					<div flex="60"   layout-align="end center" layout="row">
+						<md-button class="md-raised" ng-click="$ctrl.previousPage()">Previous page</md-button>
+						<md-button class="md-raised" ng-click="$ctrl.nextPage()">Next page</md-button>
+					</div>
+					<div class="weeks-wrap" flex="100">
+						<md-button class="md-icon-button" ng-class="{'md-raised': item == $ctrl.week}" ng-repeat="item in $ctrl.weeks track by item" ng-click="$ctrl.changeWeek(item)"><a>{{item}}</a></md-button>
+					</div>
+				</div>
+			</md-card-content>
+		</md-card>
+	</md-content>
+	<parse-unit-lister entity="$ctrl.entity" selectable="false"></parse-unit-lister>
+</md-content>

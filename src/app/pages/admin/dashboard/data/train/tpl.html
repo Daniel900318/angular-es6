@@ -1,0 +1,40 @@
+<md-dialog aria-label="login">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Training</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="$ctrl.cancel()">
+        <md-icon aria-label="Close"><i class="material-icons">close</i></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    <md-content class="md-padding">
+      <form name="entity" layout="row" layout-wrap>
+        <md-input-container class="md-block" flex="50">
+          <label>Train size</label>
+          <input max="30" md-no-asterisk name="" ng-model="$ctrl.entity.trainSize" type="text">
+        </md-input-container>
+        <md-input-container class="md-block" flex="50">
+          <label>Number of memories</label>
+          <input max="30" md-no-asterisk name="" ng-model="$ctrl.entity.memories" type="text">
+        </md-input-container>
+        <md-input-container class="md-block" flex="50">
+          <label>dim inputs</label>
+          <input max="30" md-no-asterisk name="" ng-model="$ctrl.entity.dim" type="text">
+        </md-input-container>
+        <md-input-container class="md-block" flex="100">
+          <label>Model name to save</label>
+          <input max="30" required md-no-asterisk name="name" ng-model="$ctrl.entity.name" type="text">
+          <div ng-messages="entity.name.$error">
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+      </form>
+    </md-content>
+  </md-dialog-content>
+  <md-dialog-actions layout="row">
+    <span flex></span>
+    <md-button ng-click="$ctrl.train()" class="md-raised">Ok</md-button>
+  </md-dialog-actions>
+</md-dialog>

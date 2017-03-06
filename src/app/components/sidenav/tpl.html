@@ -1,0 +1,19 @@
+<md-sidenav class="md-sidenav-left md-whiteframe-4dp t-bg" md-component-id="left">
+  <md-toolbar class="t-bg">
+    <div class="md-toolbar-tools" layout-align="space-between center">
+      <h2>Medios</h2>
+    </div>
+  </md-toolbar>
+  <md-content>
+    <md-divider></md-divider>
+    <md-list>
+      <md-list-item class="t-bg t-color" bindonce ng-repeat="item in $ctrl.topMenus track by item.Name" ng-click="$ctrl.runTopMenu(item.Name)">
+        <md-icon>
+          <i class="material-icons t-color" bo-text="item.Icon"></i>
+        </md-icon>
+        <p bo-text="item.Name">Data Usage</p>
+      </md-list-item>
+    </md-list>
+    <md-divider></md-divider>
+  </md-content>
+</md-sidenav>

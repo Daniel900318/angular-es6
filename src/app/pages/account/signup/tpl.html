@@ -1,0 +1,55 @@
+<md-dialog aria-label="login">
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Sign Up</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="$ctrl.cancel()">
+          <md-icon aria-label="Close"><i class="material-icons">close</i></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <md-content class="md-padding">
+        <form name="entity">
+          <md-input-container class="md-block" flex="100">
+            <label>User Name</label>
+            <input md-maxlength="30" required md-no-asterisk name="username" ng-model="$ctrl.entity.username" type="text">
+            <div ng-messages="entity.username.$error">
+              <div ng-message="required">This is required.</div>
+              <div ng-message="md-maxlength">The description must be less than 30 characters long.</div>
+            </div>
+          </md-input-container>
+          <md-input-container class="md-block" flex="100">
+            <label>Email</label>
+            <input md-maxlength="30" required md-no-asterisk name="email" ng-model="$ctrl.entity.email" type="email">
+            <div ng-messages="entity.email.$error">
+              <div ng-message="required">This is required.</div>
+            </div>
+          </md-input-container>
+          <md-input-container class="md-block" flex="100">
+            <label>Password</label>
+            <input md-maxlength="30" required md-no-asterisk name="password" ng-model="$ctrl.entity.password" type="password">
+            <div ng-messages="entity.password.$error">
+              <div ng-message="required">This is required.</div>
+              <div ng-message="md-maxlength">The description must be less than 30 characters long.</div>
+            </div>
+          </md-input-container>
+          <md-input-container class="md-block" flex="100">
+            <label>Confirm</label>
+            <input md-maxlength="30" required md-no-asterisk name="confirm" ng-model="$ctrl.entity.confirm" type="password">
+            <div ng-messages="entity.confirm.$error">
+              <div ng-message="required">This is required.</div>
+              <div ng-message="md-maxlength">The description must be less than 30 characters long.</div>
+            </div>
+          </md-input-container>
+        </form>
+      </md-content>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button ng-click="$ctrl.cancel()">Cancel</md-button>
+      <md-button class="md-raised" ng-click="$ctrl.signup()">Signup</md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

@@ -1,0 +1,131 @@
+<md-dialog aria-label="login">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Create Prediction</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="$ctrl.cancel()">
+        <md-icon aria-label="Close"><i class="material-icons">close</i></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    <md-content class="md-padding">
+      <form name="entity" layout-wrap layout="collumn">
+        <md-select placeholder="Select season" ng-model="$ctrl.entity.season" flex-gt-md="30" style="margin-top: 0" flex="100">
+          <md-option ng-value="season" ng-repeat="season in $ctrl.seasons track by season">{{season}}</md-option>
+        </md-select>
+        <md-select placeholder="Select week" ng-model="$ctrl.entity.week" flex-gt-md="30" style="margin-top: 0" flex="100">
+          <md-option ng-value="week" ng-repeat="week in $ctrl.weeks track by week">{{week}}</md-option>
+        </md-select>
+        <mdp-date-picker mdp-placeholder="Date" ng-model="$ctrl.entity.dateOrg" flex="50"></mdp-date-picker>
+        <mdp-time-picker mdp-placeholder="Time" ng-model="$ctrl.entity.timeOrg" flex="50"></mdp-time-picker>
+        <md-select placeholder="Select team" ng-model="$ctrl.entity.team" flex-gt-md="30" style="margin-top: 0" flex="100">
+          <md-option ng-value="team" ng-repeat="team in $ctrl.teams track by team">{{team}}</md-option>
+        </md-select>
+        <md-select placeholder="Select opponent team" ng-model="$ctrl.entity.oppTeam" flex-gt-md="30" style="margin-top: 0" flex="100">
+          <md-option ng-value="team" ng-repeat="team in $ctrl.teams track by team">{{team}}</md-option>
+        </md-select>
+        <md-input-container class="md-block" flex="50">
+          <label>Points</label>
+          <input required md-no-asterisk name="points" ng-model="$ctrl.entity.points" type="number">
+          <div ng-messages="entity.points.$error">
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block" flex="50">
+          <label>Opponent points</label>
+          <input required md-no-asterisk name="oppPoints" ng-model="$ctrl.entity.oppPoints" type="number">
+          <div ng-messages="entity.oppPoints.$error">
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block" flex="50">
+          <label>Points difference</label>
+          <input required md-no-asterisk name="pointsDiff" ng-model="$ctrl.entity.pointsDiff" type="number">
+          <div ng-messages="entity.pointsDiff.$error">
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block" flex="50">
+          <label>Spread</label>
+          <input required md-no-asterisk name="spread" ng-model="$ctrl.entity.spread" type="number">
+          <div ng-messages="entity.spread.$error">
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block" flex="50">
+          <label>Win against spread</label>
+          <input required md-no-asterisk name="winAgainstSpread" ng-model="$ctrl.entity.winAgainstSpread" type="number">
+          <div ng-messages="entity.winAgainstSpread.$error">
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block" flex="50">
+          <label>Spread percentage sbr</label>
+          <input required md-no-asterisk name="spreadPerSbr" ng-model="$ctrl.entity.spreadPerSbr" type="number">
+          <div ng-messages="entity.spreadPerSbr.$error">
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block" flex="50">
+          <label>Moneyline team</label>
+          <input required md-no-asterisk name="moneyTeam" ng-model="$ctrl.entity.moneyTeam" type="number">
+          <div ng-messages="entity.moneyTeam.$error">
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block" flex="50">
+          <label>Moneyline oppenent</label>
+          <input required md-no-asterisk name="moneyOpp" ng-model="$ctrl.entity.moneyOpp" type="number">
+          <div ng-messages="entity.moneyOpp.$error">
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block" flex="50">
+          <label>Total team</label>
+          <input required md-no-asterisk name="totalTeam" ng-model="$ctrl.entity.totalTeam" type="number">
+          <div ng-messages="entity.totalTeam.$error">
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block" flex="50">
+          <label>Total oppenent</label>
+          <input required md-no-asterisk name="totalOpp" ng-model="$ctrl.entity.totalOpp" type="number">
+          <div ng-messages="entity.totalOpp.$error">
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block" flex="50">
+          <label>Pick sportsplay</label>
+          <input required md-no-asterisk name="pickPlay" ng-model="$ctrl.entity.pickPlay" type="number">
+          <div ng-messages="entity.pickPlay.$error">
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block" flex="50">
+          <label>Spread percentage sportsplay</label>
+          <input required md-no-asterisk name="spreadPerPlay" ng-model="$ctrl.entity.spreadPerPlay" type="number">
+          <div ng-messages="entity.spreadPerPlay.$error">
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block" flex="50">
+          <label>Spread percentage vegas</label>
+          <input required md-no-asterisk name="spreadPerVegas" ng-model="$ctrl.entity.spreadPerVegas" type="number">
+          <div ng-messages="entity.spreadPerVegas.$error">
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+      </form>
+    </md-content>
+  </md-dialog-content>
+  <md-dialog-actions layout="row">
+    <span flex></span>
+    <md-button ng-click="$ctrl.cancel()">
+      Cancel
+    </md-button>
+    <md-button ng-click="$ctrl.create()">
+      Let's go
+    </md-button>
+  </md-dialog-actions>
+</md-dialog>

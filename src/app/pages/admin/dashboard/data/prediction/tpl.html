@@ -1,0 +1,22 @@
+<md-dialog aria-label="login">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Prediction</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="$ctrl.cancel()"><i class="material-icons">close</i></md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    <md-content class="md-padding">
+      <form name="entity">
+        <md-select placeholder="Select Model" ng-model="$ctrl.model" flex="100">
+          <md-option ng-value="item" ng-repeat="item in $ctrl.models track by item.name" bindonce bo-text="item.name" aria-label="select"></md-option>
+        </md-select>
+      </form>
+    </md-content>
+  </md-dialog-content>
+  <md-dialog-actions layout="row">
+    <span flex></span>
+    <md-button ng-click="$ctrl.prediction()">Ok</md-button>
+  </md-dialog-actions>
+</md-dialog>

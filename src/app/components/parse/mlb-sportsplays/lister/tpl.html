@@ -1,0 +1,39 @@
+<mdt-table	table-card="{visible: true, title: 'Data', columnSelector: true}"
+			alternate-headers="'contextual'" 
+			paginated-rows="{isEnabled: true, rowsPerPageValues: [5,10,20,50]}" 
+			selectable-rows="$ctrl.selectable" 
+			delete-row-callback="$ctrl.selectedRowCallback(rows)"
+			mdt-row="{
+				data: $ctrl.entity,
+				'table-row-id-key': 'id',
+				'column-keys': [
+						'srap_datetime', 'prediction', 'game_date','game_time','home','away',
+						'rl_home_picks','rl_away_picks','rl_home_percentage','rl_away_percentage',
+						'ml_home_picks','ml_away_picks','ml_home_percentage','ml_away_percentage',
+						'tt_home_picks','tt_away_picks','tt_home_percentage','tt_away_percentage'
+				]
+				}">
+	<mdt-header-row>
+		<mdt-column align-rule="left">srap_datetime</mdt-column>
+		<mdt-column align-rule="left">Prediction</mdt-column>
+		<mdt-column align-rule="left">game_date</mdt-column>
+		<mdt-column align-rule="left">game_time</mdt-column>
+		<mdt-column align-rule="left">home</mdt-column>
+		<mdt-column align-rule="left">away</mdt-column>
+		<mdt-column align-rule="left">rl_home_picks</mdt-column>
+		<mdt-column align-rule="left">rl_away_picks</mdt-column>
+		<mdt-column align-rule="left">rl_home_percentage</mdt-column>
+		<mdt-column align-rule="left">rl_away_percentage</mdt-column>
+		<mdt-column align-rule="left">ml_home_picks</mdt-column>
+		<mdt-column align-rule="left">ml_away_picks</mdt-column>
+		<mdt-column align-rule="left">ml_home_percentage</mdt-column>
+		<mdt-column align-rule="left">ml_away_percentage</mdt-column>
+		<mdt-column align-rule="left">tt_home_picks</mdt-column>
+		<mdt-column align-rule="left">tt_away_picks</mdt-column>
+		<mdt-column align-rule="left">tt_home_percentage</mdt-column>
+		<mdt-column align-rule="left">tt_away_percentage</mdt-column>
+	</mdt-header-row>
+	<mdt-custom-cell column-key="prediction" html-content="true">
+    	<mdt-custom-cell-button on-status="true" ng-disabled="false" on-change="clientScope.showRowId()" item="rowId">Test</mdt-custom-cell-button>
+  	</mdt-custom-cell>
+</mdt-table>

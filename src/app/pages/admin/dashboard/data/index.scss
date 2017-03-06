@@ -1,0 +1,17 @@
+.filter-wrap{
+	md-input-container {
+		margin-bottom: 0;
+		.md-errors-spacer{
+			height: 0;
+    		min-height: 0;
+		}
+	}
+}
+
+.weeks-wrap {
+	.md-icon-button {
+		margin: 0;
+		width: 35px;
+		height: 35px
+	}
+}

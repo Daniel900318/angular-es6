@@ -1,0 +1,66 @@
+@import './variable.scss';
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+
+@import '~bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+@import '~material-design-icons-iconfont/dist/material-design-icons.scss';
+@import '~angular-material/angular-material.css';
+@import '~mdPickers/dist/mdPickers.css';
+@import '~md-data-table/dist/md-data-table-style.css';
+
+html {
+	height: 100%;
+}
+
+body {
+	position: relative;
+	min-height: 100%;
+
+	// padding-bottom: 60px;
+}
+
+a {
+	cursor: pointer;
+}
+
+.navbar {
+	margin-bottom: 0;
+}
+
+.main-wrapper {
+	height: calc(100vh - 51px);
+}
+
+.wrapper{
+	height: 100%;
+}
+.isM {
+	display: none!important;
+}
+
+.isMv {
+	visibility: hidden!important;
+}
+
+.isP {
+	display: inline!important;
+}
+
+.isPv {
+	visibility: visible!important;
+}
+
+
+@media screen and (max-width: $m_width) {
+	.isM {
+		display: block!important;
+	}
+	.isMv {
+		visibility: visible!important;
+	}
+	.isP {
+		display: none!important;
+	}
+	.isPv {
+		visibility: hidden!important;
+	}
+}

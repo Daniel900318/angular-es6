@@ -1,0 +1,12 @@
+navbar {
+  .navbar-default {
+    margin-bottom: 0;
+    .navbar-header {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+.navbar-static-top{
+	z-index: 77;
+}

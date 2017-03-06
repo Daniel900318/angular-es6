@@ -1,0 +1,32 @@
+<md-dialog aria-label="login">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Parsing</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="$ctrl.cancel()">
+        <md-icon aria-label="Close"><i class="material-icons">close</i></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    <md-content class="md-padding">
+      <form name="entity">
+        <md-select placeholder="Select Name" ng-model="$ctrl.entity.name" md-on-open="$ctrl.loadNames()">
+          <md-option ng-value="item.name" ng-repeat="item in $ctrl.names track by item.name" bindonce bo-text="item.name" aria-label="select"></md-option>
+        </md-select>
+        <mdp-date-picker mdp-placeholder="Date" ng-model="$ctrl.entity.date"></mdp-date-picker>
+        <md-input-container class="md-block">
+          <label>Duration</label>
+          <input max="30" required md-no-asterisk name="duration" ng-model="$ctrl.entity.duration" enter-submit="$ctrl.login()" type="number">
+          <div ng-messages="entity.duration.$error">
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+      </form>
+    </md-content>
+  </md-dialog-content>
+  <md-dialog-actions layout="row">
+    <span flex></span>
+    <md-button ng-click="$ctrl.getData()" class="md-raised">Ok</md-button>
+  </md-dialog-actions>
+</md-dialog>

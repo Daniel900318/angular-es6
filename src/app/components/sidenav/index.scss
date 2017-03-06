@@ -1,0 +1,9 @@
+@import '../variable.scss';
+md-sidenav.md-sidenav-left {
+  width: 250px;
+  .md-list-item-inner {
+    md-icon{
+      margin-right: 15px!important;
+    }
+  }
+}

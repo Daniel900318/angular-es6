@@ -1,0 +1,59 @@
+<md-content>
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+			<h2>Data parsed</h2>
+			<span flex></span>
+			<md-button class="md-raised md-mini" ng-click="$ctrl.showTrain()">Training</md-button>
+			<md-button class="md-raised md-mini" ng-click="$ctrl.showGetData()">Parsing</md-button>
+		</div>
+	</md-toolbar>
+	<md-content>
+		<md-card>
+			<md-card-content>
+				<div layout="row" layout-wrap class="filter-wrap">
+					<md-input-container flex="20">
+						<label>Select Game</label>
+						<md-select ng-model="$ctrl.group">
+							<md-option ng-repeat="item in $ctrl.groups track by item.name" ng-value="item" ng-click="$ctrl.goTeam(item)">
+								{{item.name}}
+							</md-option>
+						</md-select>
+					</md-input-container>
+					<md-radio-group ng-model="$ctrl.selMode" md-theme="white" flex="80">
+						<md-content layout="row" layout-wrap class="md-padding" style="padding-bottom: 0">
+							<md-content flex="30" layout="row" layout-wrap layout-align="start start">
+								<md-radio-button value="week" flex="100">By week</md-radio-button>
+								<md-select placeholder="Select Year" ng-model="$ctrl.year" flex="100">
+									<md-option ng-value="year" ng-repeat="year in $ctrl.years track by year">{{year}}</md-option>
+								</md-select>
+								<!-- <md-select placeholder="Select Week" ng-model="$ctrl.week" flex="100" style="margin: 0">
+									<md-option ng-value="week" ng-repeat="week in $ctrl.weeks track by week">{{week}} weeks</md-option>
+								</md-select> -->
+							</md-content>
+							<md-content flex="70" layout="row" layout-wrap layout-align="start start">
+								<md-radio-button value="duration" flex="100">By duration</md-radio-button>
+								<mdp-date-picker mdp-placeholder="Date" ng-model="$ctrl.duration.startDate" flex="50"></mdp-date-picker>
+								<mdp-date-picker mdp-placeholder="Date" ng-model="$ctrl.duration.endDate" flex="50"></mdp-date-picker>
+							</md-content>
+						</md-content>
+					</md-radio-group>
+					<div class="weeks-wrap" flex="100">
+						<md-button class="md-icon-button" ng-class="{'md-raised': item == $ctrl.week}" ng-repeat="item in $ctrl.weeks track by item" ng-click="$ctrl.changeWeek(item)"><a>{{item}}</a></md-button>
+					</div>
+					<div flex="100" layout-align="space-between center" layout="row">
+						<div>
+							<md-button class="md-raised" ng-click="$ctrl.showData()">Show Result</md-button>
+							<md-button class="md-raised" ng-click="$ctrl.loadCSV()">Load Data</md-button>
+							<md-button class="md-raised" ng-click="$ctrl.predictions()">Predictions</md-button>
+						</div>
+						<div>
+							<md-button class="md-raised" ng-click="$ctrl.nextPage()">Next page</md-button>
+							<md-button class="md-raised" ng-click="$ctrl.previousPage()">Previous page</md-button>
+						</div>
+					</div>
+				</div>
+			</md-card-content>
+		</md-card>
+	</md-content>
+	<parse-unit-lister entity="$ctrl.entity" selectable="true"></parse-unit-lister>
+</md-content>

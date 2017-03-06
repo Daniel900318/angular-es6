@@ -1,0 +1,52 @@
+<mdt-table 
+	table-card="{visible: true, title: 'Data', columnSelector: true}"
+	alternate-headers="'contextual'"
+	paginated-rows="{isEnabled: true, rowsPerPageValues: [5,10,20,50]}"
+	selectable-rows="$ctrl.selectable"
+	select-on-rowclick="true"
+	delete-row-callback="$ctrl.selectedRowCallback(rows)"
+	mdt-row="{
+				data: $ctrl.entity,
+				'table-row-id-key': 'id',
+				'column-keys': [
+						'season', 'week', 'date', 'time', 'team_org', 'opponent_team_org', 'points', 'opponent_points', 'pre_points', 'pre_opponent_points', 'points_difference', 'spread', 'win_against_spread',
+						'spread_percentage_sbr', 'moneyline_team', 'moneyline_opponent', 'total_team', 'total_opponent',
+						'pick_sportsplays', 'spread_percentage_sportsplays', 'spread_percentage_vegas'
+				]
+			}">
+	<mdt-header-row>
+		<mdt-column align-rule="left" column-sort="true">season</mdt-column>
+		<mdt-column align-rule="left" column-sort="true">week</mdt-column>
+		<!-- <mdt-column align-rule="left" column-sort="true">prediction</mdt-column> -->
+		<mdt-column align-rule="left" column-sort="true">date</mdt-column>
+		<mdt-column align-rule="left" column-sort="true">time</mdt-column>
+		<mdt-column align-rule="left" column-sort="true">team</mdt-column>
+		<mdt-column align-rule="left" column-sort="true">opp team</mdt-column>
+		<mdt-column align-rule="left" column-sort="true">points</mdt-column>
+		<mdt-column align-rule="left" column-sort="true">opp points</mdt-column>
+		<mdt-column align-rule="left" column-sort="true">pre points</mdt-column>
+		<mdt-column align-rule="left" column-sort="true">pre opp points</mdt-column>
+		<mdt-column align-rule="left" column-sort="true">points diff</mdt-column>
+		<mdt-column align-rule="left" column-sort="true">spread</mdt-column>
+		<mdt-column align-rule="left" column-sort="true">win against spread</mdt-column>
+		<mdt-column align-rule="left" column-sort="true">spread percentage sbr</mdt-column>
+		<mdt-column align-rule="left" column-sort="true">moneyline team</mdt-column>
+		<mdt-column align-rule="left" column-sort="true">moneyline opponent</mdt-column>
+		<mdt-column align-rule="left" column-sort="true">total team</mdt-column>
+		<mdt-column align-rule="left" column-sort="true">total opponent</mdt-column>
+		<mdt-column align-rule="left" column-sort="true">pick sportsplays</mdt-column>
+		<mdt-column align-rule="left" column-sort="true">spread percentage sportsplays</mdt-column>
+		<mdt-column align-rule="left" column-sort="true">spread percentage vegas</mdt-column>
+	</mdt-header-row>
+	<!-- <mdt-custom-cell column-key="id" html-content="true">
+		<mdt-custom-cell-button on-status="true" ng-disabled="false" emmit-param="nfl:prediction" item="rowId"></mdt-custom-cell-button>
+	</mdt-custom-cell> -->
+	<mdt-custom-cell column-key="pre_points" html-content="true">
+		<mdt-custom-cell-item value-id="rowId" value-type="pre_points"></mdt-custom-cell-item>
+        <!-- <span ng-class="{'red': clientScope.test(value), 'green': value <= 5}">{{value}}</span> -->
+    </mdt-custom-cell>
+    <mdt-custom-cell column-key="pre_opponent_points">
+    	<mdt-custom-cell-item value-id="rowId" value-type="pre_opponent_points"></mdt-custom-cell-item>
+    	<!-- <span ng-class="{'red': value > 5, 'green': value <= 5}">{{value}}</span> -->
+    </mdt-custom-cell>
+</mdt-table>

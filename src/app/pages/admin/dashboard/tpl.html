@@ -1,0 +1,20 @@
+<div layout="column" ng-cloak class="wrapper">
+	<div layout="row" flex>
+		<md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" md-whiteframe="4">
+			<md-toolbar class="md-theme-indigo">
+				<h1 class="md-toolbar-tools">Betting Admin</h1>
+			</md-toolbar>
+			<md-content layout-padding>
+				<!-- <md-subheader class="md-no-sticky">Single Action Checkboxes</md-subheader> -->
+				<md-list flex>
+					<md-list-item class="md-1-line" bindonce ng-repeat="item in $ctrl.menus track by item.id" ng-click="$ctrl.changeView(item.name)" aria-label="button">
+						<p bo-text="item.name"></p>
+					</md-list-item>
+				</md-list>
+			</md-content>
+		</md-sidenav>
+		<div flex style="padding: 5px;">
+			<div ui-view></div>
+		</div>
+	</div>
+</div>

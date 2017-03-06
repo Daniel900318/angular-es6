@@ -1,0 +1,191 @@
+<div id="ip-container" class="ip-container">
+  <div class="ip-main">
+    <!-- Mobile nav -->
+    <div id="cbp-spmenu" class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right">
+      <div class="mobile_nav_close_button"><a id="hideRight" href=""><span class="close_icon zmdi zmdi-arrow-right"></span></a></div>
+      <nav id="mobile_menu_content" class="navbar-nav-mobile"><a href="#hero">Home</a><a ng-click="$ctrl.toUser()">User</a><a ng-click="$ctrl.toAdmin()">Admin</a><a href="#newsletter">Newsletter</a><a ng-click="$ctrl.toLogin()">Login</a></nav>
+    </div>
+    <header id="header" class="header t-navbar navbar-light animated header">
+      <div class="container">
+        <a href="#" class="navbar-brand"><span class="logo">$</span><span class="brand-txt">Betting</span></a>
+        <div class="navbar">
+          <ul class="nav navbar-nav pull-right" hide-sm>
+            <li class="nav-item"><a ng-click="$ctrl.gotoElement('hero')">Home</a></li>
+            <li class="nav-item"><a ng-click="$ctrl.toUser()">User</a></li>
+            <li class="nav-item"><a ng-click="$ctrl.toAdmin()">Admin</a></li>
+            <li class="nav-item"><a ng-click="$ctrl.gotoElement('newsletter')">Newsletter</a></li>
+            <li class="nav-item" ng-hide="$ctrl.isLoggedIn()"><a ng-click="$ctrl.toLogin()">Login</a></li>
+          </ul>
+          <div class="pull-right togger-container" hide-gt-sm>
+            <md-menu>
+              <md-button aria-label="menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                <i class="material-icons" style="color: white">apps</i>
+              </md-button>
+              <md-menu-content width="2" class="right-menu">
+                <md-menu-item bindonce ng-repeat="item in $ctrl.topMenus track by item.Name" class="top-menu top-menu-item" ng-cloak>
+                  <md-button aria-label="menu" ng-click="$ctrl.runTopMenu(item.id)"><span bo-text="item.Name"></span>
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="main-content">
+      <div id="hero" class="hero">
+        <div class="hero-inner">
+          <div class="container">
+            <div class="col-lg-6 col-lg-offset-3">
+              <h2>Betting predictions</h2>
+              <p>Betting predictions. Livescore, statistics, betting odds. Vitibet.com provides live scores and soccer results for over 100 leagues. Betting predictions. League tables, results, stats and free betting tips. Betting predictions. Vitibet.com offers betting tips, team stats, live score feeds and league results. Betting predictions.</p><a href="" target="_blank" class="btn btn-primary btn-cta btn-lg btn-raised ui-wave" ng-click="$ctrl.toSignup()">SignUp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="features" class="features">
+        <header>
+          <h2 class="section-heading-underline">Key Features</h2>
+        </header>
+        <div class="container">
+          <div class="row">
+            <div class="feature-item col-md-4 text-center">
+              <div class="icon-container"><i class="material-icons">accessibility</i></div>
+              <h3>Decision tree learning</h3>
+              <div class="desc">
+                <p>Decision tree learning uses a decision tree as a predictive model, which maps observations about an item to conclusions about the item's target value.</p>
+              </div>
+            </div>
+            <div data-wow-delay="0.3s" class="feature-item col-md-4 text-center">
+              <div class="icon-container"><i class="material-icons">add_alarm</i></div>
+              <h3>Association rule learning</h3>
+              <div class="desc">
+                <p>Association rule learning is a method for discovering interesting relations between variables in large databases.</p>
+              </div>
+            </div>
+            <div data-wow-delay="0.6s" class="feature-item col-md-4 text-center">
+              <div class="icon-container"><i class="material-icons">group_work</i></div>
+              <h3>Artificial neural networks</h3>
+              <div class="desc">
+                <p>An artificial neural network (ANN) learning algorithm, usually called "neural network" (NN), is a learning algorithm that is inspired by the structure and functional aspects of biological neural networks. </p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="feature-item col-md-4 text-center">
+              <div class="icon-container"><i class="material-icons">perm_camera_mic</i></div>
+              <h3>Deep learning</h3>
+              <div class="desc">
+                <p>Falling hardware prices and the development of GPUs for personal use in the last few years have contributed to the development of the concept of Deep learning which consists of multiple hidden layers in an artificial neural network. </p>
+              </div>
+            </div>
+            <div data-wow-delay="0.3s" class="feature-item col-md-4 text-center">
+              <div class="icon-container"><i class="material-icons">settings_input_svideo</i></div>
+              <h3>Inductive logic programming</h3>
+              <div class="desc">
+                <p>Inductive logic programming (ILP) is an approach to rule learning using logic programming as a uniform representation for input examples, background knowledge, </p>
+              </div>
+            </div>
+            <div data-wow-delay="0.6s" class="feature-item col-md-4 text-center">
+              <div class="icon-container"><i class="material-icons">supervisor_account</i></div>
+              <h3>Support vector machines</h3>
+              <div class="desc">
+                <p>Support vector machines (SVMs) are a set of related supervised learning methods used for classification and regression.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="faq" class="faq">
+        <div class="container">
+          <header>
+            <h2 class="section-heading-underline">FAQs</h2>
+          </header>
+          <ul class="faq-list">
+            <li class="wow fadeInLeft">
+              <h4 class="faq-q">I have forgotten my username/password - what can I do?</h4>
+              <p class="faq-a">To access the Lost Login facility via the web, please select Lost Login? in the top right corner of our website.</p>
+            </li>
+            <li class="wow fadeInRight">
+              <h4 class="faq-q">How do I deposit?</h4>
+              <p class="faq-a">To make a deposit into your bet365 account you need to be logged in, then select the Services drop down menu in the top right corner > Deposit, alternatively if logged in on a computer this area can be accessed here. This will present you with the Deposit section of the Members page. From here you can select your desired payment method, submit the relevant payment details and register it to your account.</p>
+            </li>
+            <li data-wow-delay="0.15s" class="wow fadeInLeft">
+              <h4 class="faq-q">What payment methods do you accept?</h4>
+              <p class="faq-a">You can fund your bet365 account using a wide range of payment methods including debit and credit cards, bank transfers, prepaid vouchers or ewallet systems. For a full list of all payment methods and related information, please refer to our Payments section by selecting Payments from the Help main menu, alternatively these details can be found here.</p>
+            </li>
+            <li data-wow-delay="0.15s" class="wow fadeInRight">
+              <h4 class="faq-q">How long will my withdrawal take?</h4>
+              <p class="faq-a">The clearance time of a withdrawal made from your bet365 account will vary depending on the payment method you use. For example, a withdrawal made to a credit or debit card takes 2-5 working days due to normal banking procedures, whereas a withdrawal made via Skrill takes 24 hours.</p>
+            </li>
+            <li data-wow-delay="0.3s" class="wow fadeInLeft">
+              <h4 class="faq-q">Why can't I use my bonus?</h4>
+              <p class="faq-a">Areas to consider when claiming a bonus are; have you met the qualifying conditions of the bonus, submitted the correct full ten-digit offer code and/or met the initial deposit turnover requirement to unlock the bonus funds? </p>
+            </li>
+            <li data-wow-delay="0.3s" class="wow fadeInRight">
+              <h4 class="faq-q">How long will it take for my bet(s) to be settled?</h4>
+              <p class="faq-a">We always try to settle bets as quickly as possible. For some events, official confirmation of the result is necessary before settlement takes place, which may cause a slight delay. We aim to settle all bets within an hour of the event finishing and In-Play bets during the event, where the result is available.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="newsletter" data-stellar-background-ratio="0.6" class="newsletter">
+        <h2>Sign up to Our newsletter</h2>
+        <form>
+          <fieldset>
+            <md-input-container>
+              <label>Email</label>
+              <input ng-model="user.email" type="email">
+            </md-input-container>
+            <md-button class="md-raised">Subscribe</md-button>
+          </fieldset>
+        </form>
+      </div>
+      <div id="contact" class="contact">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-5">
+              <h3 class="section-heading-underline">Contact Info</h3>
+              <div class="contact-info-container wow fadeInLeft">
+                <p class="lead"> Feel free to contact us, if you have any questions, we'll be glad to help.</p>
+                <ul class="list-unstyled contact-info">
+                  <li><i class="material-icons">location_on</i></span>San Mateo, CA, 94403</li>
+                  <li><i class="material-icons">phone</i>(012) 345 6789</li>
+                  <li><i class="material-icons">email</i>adminmail@domain.com</li>
+                  <li><i class="material-icons">business</i>www.bettingpridict.com</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-5 col-md-offset-2">
+              <h3 class="section-heading-underline">Contact Us</h3>
+              <form novalidate class="form-horizontal wow fadeInRight">
+                <fieldset>
+                  <md-input-container>
+                    <label>Email</label>
+                    <input ng-model="user.email" type="email">
+                  </md-input-container>
+                  <md-input-container>
+                    <label>Password</label>
+                    <input ng-model="user.email" type="password">
+                  </md-input-container>
+                  <md-input-container class="md-block">
+                    <label>Message</label>
+                    <textarea ng-model="user.biography" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+                  </md-input-container>
+                  <div class="divider"></div>
+                  <md-button class="md-raised">SUBMIT</md-button>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="action-call text-center">
+        <span>We support a wide range of methods to help you deposit and withdraw your funds quickly and easily.</span>
+        <md-button class="md-raised" ng-click="$ctrl.toSignup()">Signup</md-button>
+      </div>
+    </div>
+    <footer class="footer text-center"><span>© Copyright <span id="copyright"></span> BTP</span>
+    </footer>
+  </div>
+</div>
